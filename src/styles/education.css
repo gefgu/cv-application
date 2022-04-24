@@ -1,5 +1,6 @@
 .study-name {
   margin-bottom: 0;
+  font-size: 1.5rem;
 }
 
 .school-name {
@@ -17,4 +18,9 @@
 
 .education-section > div {
   margin-bottom: 32px;
+}
+
+.education-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
 }

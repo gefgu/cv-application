@@ -24,3 +24,7 @@
 .work-section > div { 
   margin-bottom: 32px;
 }
+
+.work-section h2 {
+  font-size: 2rem;
+}
