@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/work.css";
 
 class Work extends Component {
   render() {
@@ -18,10 +19,12 @@ class Work extends Component {
 
           return (
             <div>
-              <h3>{positionTitle}</h3>
-              <h4>{companyName}</h4>
-              <span>{startDate} - {endDate}</span>
-              <p>{description}</p>
+              <h3 className="position-title">{positionTitle}</h3>
+              <h4 className="company-name">{companyName}</h4>
+              <span className="date">
+                {startDate} - {endDate}
+              </span>
+              <p className="job-description">{description}</p>
             </div>
           );
         })}

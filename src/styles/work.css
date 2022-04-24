@@ -1,0 +1,22 @@
+.position-title {
+  margin-bottom: 0;
+}
+
+.company-name {
+  margin-top: 4px;
+  font-weight: lighter;
+  font-style: italic;
+  display: inline;
+  margin-right: 8px;
+}
+
+.date {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.job-description {
+  text-align: justify;
+  hyphens: auto;
+  line-height: 1.25rem;
+}
