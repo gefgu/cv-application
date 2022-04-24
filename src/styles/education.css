@@ -1,0 +1,16 @@
+.study-name {
+  margin-bottom: 0;
+}
+
+.school-name {
+  margin-top: 4px;
+  font-weight: lighter;
+  font-style: italic;
+  display: inline;
+  margin-right: 8px;
+}
+
+.date {
+  font-weight: lighter;
+  font-style: italic;
+}

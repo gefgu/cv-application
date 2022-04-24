@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/education.css"
 
 class Education extends Component {
   render() {
@@ -13,9 +14,9 @@ class Education extends Component {
 
           return (
             <div>
-              <h3>{titleOfStudy}</h3>
-              <h4>{schoolName}</h4>
-              <span>
+              <h3 className="study-name">{titleOfStudy}</h3>
+              <h4 className="school-name">{schoolName}</h4>
+              <span className="date">
                 {startDate} - {endDate}
               </span>
             </div>
