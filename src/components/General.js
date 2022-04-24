@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../styles/general.css";
+import { faEnvelope, faContactBook } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class General extends Component {
   render() {
@@ -8,8 +10,13 @@ class General extends Component {
       <div className="general-data">
         <h1>{name}</h1>
         <div className="contact-info">
-          <p>{email}</p>
-          <p>{phone}</p>
+          <p>
+            <FontAwesomeIcon icon={faEnvelope} />
+            {email}
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faContactBook} /> {phone}
+          </p>
         </div>
       </div>
     );
