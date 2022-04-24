@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import General from "./components/General";
 import Work from "./components/Work";
 import Education from "./components/Education";
+import "./styles/app.css";
 
 class App extends Component {
   constructor(props) {
