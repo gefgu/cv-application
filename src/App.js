@@ -47,9 +47,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <GeneralData />
-        <WorkData />
-        <EducationalData />
+        <GeneralData data={this.state.data.general} />
+        <WorkData data={this.state.data.work} />
+        <EducationalData data={this.state.data.educational} />
       </div>
     );
   }
