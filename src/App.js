@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import GeneralData from "./components/GeneralData";
-import WorkData from "./components/WorkData";
-import EducationalData from "./components/EducationalData";
+import General from "./components/General";
+import Work from "./components/Work";
+import Education from "./components/Education";
 
 class App extends Component {
   constructor(props) {
@@ -47,9 +47,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <GeneralData data={this.state.data.general} />
-        <WorkData data={this.state.data.work} />
-        <EducationalData data={this.state.data.educational} />
+        <General data={this.state.data.general} />
+        <Work data={this.state.data.work} />
+        <Education data={this.state.data.educational} />
       </div>
     );
   }

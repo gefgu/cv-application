@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class EducationalData extends Component {
+class Education extends Component {
   render() {
     const educationList = this.props.data;
 
@@ -26,4 +26,4 @@ class EducationalData extends Component {
   }
 }
 
-export default EducationalData;
+export default Education;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class WorkData extends Component {
+class Work extends Component {
   render() {
     const workList = this.props.data;
 
@@ -30,4 +30,4 @@ class WorkData extends Component {
   }
 }
 
-export default WorkData;
+export default Work;

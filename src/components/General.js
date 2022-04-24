@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class GeneralData extends Component {
+class General extends Component {
   render() {
     const { name, email, phone } = this.props.data;
     return (
@@ -13,4 +13,4 @@ class GeneralData extends Component {
   }
 }
 
-export default GeneralData;
+export default General;
