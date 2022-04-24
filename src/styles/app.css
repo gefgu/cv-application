@@ -1,3 +1,14 @@
 body {
   font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-container {
+  border: 5px solid black;
+  padding: 16px;
+  box-shadow: 4px 4px 5px 3px rgba(0, 0, 0, 0.2);
+  width: 800px;
 }

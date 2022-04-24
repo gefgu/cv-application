@@ -47,7 +47,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="cv-container">
         <General data={this.state.data.general} />
         <Work data={this.state.data.work} />
         <Education data={this.state.data.educational} />
