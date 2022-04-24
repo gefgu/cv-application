@@ -1,0 +1,13 @@
+.general-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.general-data h1 {
+  font-size: 3.5rem;
+}
+
+.contact-info p {
+  margin: 4px 0;
+}

@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import "../styles/general.css";
 
 class General extends Component {
   render() {
     const { name, email, phone } = this.props.data;
     return (
-      <div>
+      <div className="general-data">
         <h1>{name}</h1>
-        <p>{email}</p>
-        <p>{phone}</p>
+        <div className="contact-info">
+          <p>{email}</p>
+          <p>{phone}</p>
+        </div>
       </div>
     );
   }
