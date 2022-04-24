@@ -20,3 +20,7 @@
   hyphens: auto;
   line-height: 1.25rem;
 }
+
+.work-section > div { 
+  margin-bottom: 32px;
+}

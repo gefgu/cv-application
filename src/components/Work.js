@@ -6,7 +6,7 @@ class Work extends Component {
     const workList = this.props.data;
 
     return (
-      <div>
+      <div className="work-section">
         <h2>Work Experience</h2>
         {workList.map((workInfo) => {
           const {

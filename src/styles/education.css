@@ -14,3 +14,7 @@
   font-weight: lighter;
   font-style: italic;
 }
+
+.education-section > div {
+  margin-bottom: 32px;
+}

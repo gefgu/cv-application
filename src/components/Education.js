@@ -6,7 +6,7 @@ class Education extends Component {
     const educationList = this.props.data;
 
     return (
-      <div>
+      <div className="education-section">
         <h2>Education</h2>
         {educationList.map((educationInfo) => {
           const { schoolName, titleOfStudy, startDate, endDate } =
