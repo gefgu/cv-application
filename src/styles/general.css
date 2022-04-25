@@ -19,7 +19,8 @@
   width: 400px;
 }
 
-.contact-info p {
+.contact-info p,
+form .contact-info > div {
   margin: 4px 0;
   display: flex;
   gap: 8px;

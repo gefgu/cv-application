@@ -21,7 +21,13 @@ class General extends Component {
               <FontAwesomeIcon icon={faContactBook} /> {phone}
             </p>
           </div>
-          <button onClick={() => {enableEdit(true)}}>Edit</button>
+          <button
+            onClick={() => {
+              enableEdit(true);
+            }}
+          >
+            Edit
+          </button>
         </div>
       );
     } else if (editing) {
@@ -34,20 +40,28 @@ class General extends Component {
             onChange={handleEdit}
           ></input>
           <div className="contact-info">
-            <input
-              type="text"
-              id="email"
-              value={email}
-              onChange={handleEdit}
-            ></input>
-            <input
-              type="text"
-              id="phone"
-              value={phone}
-              onChange={handleEdit}
-            ></input>
+            <div>
+              <FontAwesomeIcon icon={faEnvelope} />
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={handleEdit}
+              ></input>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faContactBook} />
+              <input
+                type="text"
+                id="phone"
+                value={phone}
+                onChange={handleEdit}
+              ></input>
+            </div>
           </div>
-          <button className="submit" onClick={() => enableEdit(false)}>Submit</button>
+          <button className="submit" onClick={() => enableEdit(false)}>
+            Submit
+          </button>
         </form>
       );
     }
