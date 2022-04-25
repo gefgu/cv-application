@@ -10,4 +10,8 @@
 
 .contact-info p {
   margin: 4px 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
 }
