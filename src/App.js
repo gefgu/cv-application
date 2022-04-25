@@ -11,11 +11,11 @@ class App extends Component {
     this.state = {
       data: {
         general: {
-          name: "Gustavo Bruno",
+          name: "John Doe",
           email: "gefgu12@gmail.com",
           phone: "+55 (99) 99999-9999",
         },
-        educational: [
+        education: [
           {
             schoolName: "Harvard Business School",
             titleOfStudy: "Business Making",
@@ -42,21 +42,44 @@ class App extends Component {
           },
         ],
       },
+      editing: {
+        general: false,
+        education: false,
+        work: false,
+      },
     };
   }
+
+  handleGeneralEdit = (e) => {
+    let newData = this.state.data;
+    newData.general[e.target.id] = e.target.value;
+    this.setState({ data: newData });
+  };
+
+  enableGeneralEdit = (shouldEnable) => {
+    this.setState({
+      editing: {
+        general: shouldEnable,
+      },
+    });
+  };
 
   render() {
     return (
       <div className="cv-container">
-        <General data={this.state.data.general} />
+        <General
+          data={this.state.data.general}
+          editing={this.state.editing.general}
+          handleEdit={this.handleGeneralEdit}
+          enableEdit={this.enableGeneralEdit}
+        />
         <Work data={this.state.data.work} />
-        <Education data={this.state.data.educational} />
+        <Education data={this.state.data.education} />
       </div>
     );
   }
 }
 
 export default App;
-
 
 // TODO: Add unique key to data
