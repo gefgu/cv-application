@@ -8,7 +8,7 @@ class Work extends Component {
     return (
       <div className="work-section">
         <h2>Work Experience</h2>
-        {workList.map((workInfo) => {
+        {workList.map((workInfo, index) => {
           const {
             companyName,
             positionTitle,
@@ -18,7 +18,7 @@ class Work extends Component {
           } = workInfo;
 
           return (
-            <div>
+            <div key={index}>
               <h3 className="position-title">{positionTitle}</h3>
               <h4 className="company-name">{companyName}</h4>
               <span className="date">
