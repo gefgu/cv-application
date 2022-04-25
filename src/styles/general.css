@@ -13,6 +13,7 @@
 .general-data #name {
   font-size: 3.5rem;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .general-data #name {
@@ -36,4 +37,7 @@ form .contact-info {
 
 .general-data button {
   grid-column-start: 2;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
