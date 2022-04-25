@@ -47,7 +47,7 @@ class General extends Component {
               onChange={handleEdit}
             ></input>
           </div>
-          <button onClick={() => enableEdit(false)}>submit</button>
+          <button className="submit" onClick={() => enableEdit(false)}>Submit</button>
         </form>
       );
     }

@@ -1,12 +1,22 @@
 .general-data {
   display: grid;
   grid-template-columns: 1fr auto;
-  justify-content: space-between;
   align-items: center;
+  gap: 18px 128px;
 }
 
-.general-data h1 {
+.general-data input {
+  display: block;
+}
+
+.general-data h1,
+.general-data #name {
   font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.general-data #name {
+  width: 400px;
 }
 
 .contact-info p {
@@ -15,4 +25,14 @@
   gap: 8px;
   align-items: center;
   font-size: 0.9rem;
+}
+
+form .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.general-data button {
+  grid-column-start: 2;
 }
