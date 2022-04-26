@@ -92,6 +92,7 @@ class Education extends Component {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
+                    console.log(index);
                     deleteEducationElement(index);
                   }}
                 >

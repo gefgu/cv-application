@@ -97,7 +97,9 @@ class App extends Component {
 
   deleteEducationElement = (index) => {
     let newData = this.state.data;
-    newData.education = newData.education.splice(index, 1);
+    let newEducationArray = newData.education.slice();
+    newEducationArray.splice(index, 1);
+    newData.education = newEducationArray;
     this.setState({
       data: newData,
     });
