@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/education.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 class Education extends Component {
   render() {
@@ -17,17 +17,34 @@ class Education extends Component {
           </button>
         </h2>
         {educationList.map((educationInfo, index) => {
-          const { schoolName, titleOfStudy, startDate, endDate } =
+          const { schoolName, titleOfStudy, startDate, endDate, editing } =
             educationInfo;
 
+          if (!editing) {
+            return (
+              <div key={index}>
+                <h3 className="study-name">{titleOfStudy}</h3>
+                <h4 className="school-name">{schoolName}</h4>
+                <span className="date">
+                  {startDate} - {endDate}
+                </span>
+              </div>
+            );
+          }
+
           return (
-            <div key={index}>
-              <h3 className="study-name">{titleOfStudy}</h3>
-              <h4 className="school-name">{schoolName}</h4>
+            <form key={index}>
+              <input className="study-name" placeholder="Title of Study" value={titleOfStudy}></input>
+              <input className="school-name" placeholder="School Name" value={schoolName}></input>
               <span className="date">
-                {startDate} - {endDate}
+                <input placeholder="Start Date" value={startDate}></input> -{" "}
+                <input placeholder="End Date" value={endDate}></input>
               </span>
-            </div>
+              <button>Submit</button>
+              <button>
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            </form>
           );
         })}
       </div>
