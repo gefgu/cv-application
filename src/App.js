@@ -14,6 +14,7 @@ class App extends Component {
           name: "John Doe",
           email: "gefgu12@gmail.com",
           phone: "+55 (99) 99999-9999",
+          editing: false,
         },
         education: [
           {
@@ -21,6 +22,7 @@ class App extends Component {
             titleOfStudy: "Business Making",
             startDate: "2016",
             endDate: "2020",
+            editing: false,
           },
         ],
         work: [
@@ -31,6 +33,7 @@ class App extends Component {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             startDate: "2021",
             endDate: "2022",
+            editing: false,
           },
           {
             companyName: "Google",
@@ -39,13 +42,9 @@ class App extends Component {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             startDate: "2020",
             endDate: "2021",
+            editing: false,
           },
         ],
-      },
-      editing: {
-        general: false,
-        education: false,
-        work: false,
       },
     };
   }
@@ -57,10 +56,10 @@ class App extends Component {
   };
 
   enableGeneralEdit = (shouldEnable) => {
+    let newData = this.state.data;
+    newData.general.editing = shouldEnable;
     this.setState({
-      editing: {
-        general: shouldEnable,
-      },
+      data: newData,
     });
   };
 
@@ -69,7 +68,6 @@ class App extends Component {
       <div className="cv-container">
         <General
           data={this.state.data.general}
-          editing={this.state.editing.general}
           handleEdit={this.handleGeneralEdit}
           enableEdit={this.enableGeneralEdit}
         />
@@ -81,5 +79,3 @@ class App extends Component {
 }
 
 export default App;
-
-// TODO: Add unique key to data

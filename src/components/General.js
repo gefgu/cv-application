@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class General extends Component {
   render() {
-    const { name, email, phone } = this.props.data;
-    const { handleEdit, enableEdit, editing } = this.props;
+    const { name, email, phone, editing } = this.props.data;
+    const { handleEdit, enableEdit } = this.props;
 
     if (!editing) {
       return (
