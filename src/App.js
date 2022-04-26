@@ -63,6 +63,22 @@ class App extends Component {
     });
   };
 
+  addEducation = () => {
+    let newData = this.state.data;
+    newData.education = newData.education.concat([
+      {
+        titleOfStudy: "",
+        schoolName: "",
+        startDate: "",
+        endDate: "",
+        editing: true,
+      },
+    ]);
+    this.setState({
+      data: newData,
+    });
+  };
+
   render() {
     return (
       <div className="cv-container">
@@ -72,7 +88,10 @@ class App extends Component {
           enableEdit={this.enableGeneralEdit}
         />
         <Work data={this.state.data.work} />
-        <Education data={this.state.data.education} />
+        <Education
+          data={this.state.data.education}
+          addEducation={this.addEducation}
+        />
       </div>
     );
   }
