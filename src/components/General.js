@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/general.css";
-import { faEnvelope, faContactBook } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class General extends Component {
@@ -18,7 +18,7 @@ class General extends Component {
               {email}
             </p>
             <p>
-              <FontAwesomeIcon icon={faContactBook} /> {phone}
+              <FontAwesomeIcon icon={faPhone} /> {phone}
             </p>
           </div>
           <button
@@ -50,7 +50,7 @@ class General extends Component {
               ></input>
             </div>
             <div>
-              <FontAwesomeIcon icon={faContactBook} />
+              <FontAwesomeIcon icon={faPhone} />
               <input
                 type="text"
                 id="phone"
