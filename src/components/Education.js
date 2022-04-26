@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import "../styles/education.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlus,
+  faTrash,
+  faEdit,
+  faE,
+} from "@fortawesome/free-solid-svg-icons";
 
 class Education extends Component {
   render() {
@@ -24,7 +29,12 @@ class Education extends Component {
           if (!editing) {
             return (
               <div key={index}>
-                <h3 className="study-name">{titleOfStudy}</h3>
+                <h3 className="study-name">
+                  {titleOfStudy}{" "}
+                  <button onClick={() => enableEducationEdit(index, true)}>
+                    <FontAwesomeIcon icon={faEdit} />
+                  </button>
+                </h3>
                 <h4 className="school-name">{schoolName}</h4>
                 <span className="date">
                   {startDate} - {endDate}
