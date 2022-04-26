@@ -33,17 +33,29 @@ class Education extends Component {
           }
 
           return (
-            <form key={index}>
-              <input className="study-name" placeholder="Title of Study" value={titleOfStudy}></input>
-              <input className="school-name" placeholder="School Name" value={schoolName}></input>
-              <span className="date">
-                <input placeholder="Start Date" value={startDate}></input> -{" "}
-                <input placeholder="End Date" value={endDate}></input>
-              </span>
-              <button>Submit</button>
-              <button>
-                <FontAwesomeIcon icon={faTrash} />
-              </button>
+            <form className="education-element" key={index}>
+              <input
+                className="study-name"
+                placeholder="Title of Study"
+                value={titleOfStudy}
+              ></input>
+              <div>
+                <input
+                  className="school-name"
+                  placeholder="School Name"
+                  value={schoolName}
+                ></input>
+                <span className="date">
+                  <input placeholder="Start Date" value={startDate}></input> -{" "}
+                  <input placeholder="End Date" value={endDate}></input>
+                </span>
+              </div>
+              <div className="form-buttons">
+                <button>Submit</button>
+                <button>
+                  <FontAwesomeIcon icon={faTrash} />
+                </button>
+              </div>
             </form>
           );
         })}
