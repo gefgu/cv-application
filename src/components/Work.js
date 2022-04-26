@@ -55,40 +55,42 @@ class Work extends Component {
                 onChange={(e) => handleListEdit(e, "work")}
                 name="positionTitle"
               ></input>
-              <input
-                className="company-name"
-                placeholder="Company Name"
-                value={companyName}
-                data-index={index}
-                onChange={(e) => handleListEdit(e, "work")}
-                name="companyName"
-              ></input>
-              <span className="date">
+              <div>
                 <input
-                  placeholder="Start Date"
-                  value={startDate}
+                  className="company-name"
+                  placeholder="Company Name"
+                  value={companyName}
                   data-index={index}
                   onChange={(e) => handleListEdit(e, "work")}
-                  name="startDate"
+                  name="companyName"
                 ></input>
-                -
-                <input
-                  placeholder="End Date"
-                  value={endDate}
-                  data-index={index}
-                  onChange={(e) => handleListEdit(e, "work")}
-                  name="endDate"
-                ></input>
-              </span>
-              <input
+                <span className="date">
+                  <input
+                    placeholder="Start Date"
+                    value={startDate}
+                    data-index={index}
+                    onChange={(e) => handleListEdit(e, "work")}
+                    name="startDate"
+                  ></input>
+                  -
+                  <input
+                    placeholder="End Date"
+                    value={endDate}
+                    data-index={index}
+                    onChange={(e) => handleListEdit(e, "work")}
+                    name="endDate"
+                  ></input>
+                </span>
+              </div>
+              <textarea
                 className="job-description"
                 placeholder="Job description..."
                 value={description}
                 data-index={index}
                 onChange={(e) => handleListEdit(e, "work")}
                 name="description"
-                type="textarea"
-              ></input>
+                rows={4}
+              ></textarea>
               <div className="form-buttons">
                 <button
                   type="submit"

@@ -1,5 +1,6 @@
 .position-title {
   margin-bottom: 0;
+  font-size: 1.5rem;
 }
 
 .company-name {
@@ -27,4 +28,10 @@
 
 .work-section h2 {
   font-size: 2rem;
+}
+
+.work-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
