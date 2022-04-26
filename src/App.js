@@ -87,6 +87,14 @@ class App extends Component {
     });
   };
 
+  enableEducationEdit = (index, shouldEnable) => {
+    let newData = this.state.data;
+    newData.education[index].editing = shouldEnable;
+    this.setState({
+      data: newData,
+    });
+  };
+
   render() {
     return (
       <div className="cv-container">
@@ -100,6 +108,7 @@ class App extends Component {
           data={this.state.data.education}
           addEducation={this.addEducation}
           handleEducationEdit={this.handleEducationEdit}
+          enableEducationEdit={this.enableEducationEdit}
         />
       </div>
     );

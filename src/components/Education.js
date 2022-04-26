@@ -6,7 +6,8 @@ import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 class Education extends Component {
   render() {
     const educationList = this.props.data;
-    const { addEducation, handleEducationEdit } = this.props;
+    const { addEducation, handleEducationEdit, enableEducationEdit } =
+      this.props;
 
     return (
       <div className="education-section">
@@ -70,7 +71,14 @@ class Education extends Component {
                 </span>
               </div>
               <div className="form-buttons">
-                <button>Submit</button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    enableEducationEdit(index, false);
+                  }}
+                >
+                  Submit
+                </button>
                 <button>
                   <FontAwesomeIcon icon={faTrash} />
                 </button>
