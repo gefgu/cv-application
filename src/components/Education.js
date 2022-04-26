@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import "../styles/education.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faTrash,
-  faEdit,
-  faE,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 class Education extends Component {
   render() {
