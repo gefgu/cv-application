@@ -95,6 +95,14 @@ class App extends Component {
     });
   };
 
+  deleteEducationElement = (index) => {
+    let newData = this.state.data;
+    newData.education = newData.education.splice(index, 1);
+    this.setState({
+      data: newData,
+    });
+  };
+
   render() {
     return (
       <div className="cv-container">
@@ -109,6 +117,7 @@ class App extends Component {
           addEducation={this.addEducation}
           handleEducationEdit={this.handleEducationEdit}
           enableEducationEdit={this.enableEducationEdit}
+          deleteEducationElement={this.deleteEducationElement}
         />
       </div>
     );

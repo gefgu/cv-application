@@ -11,8 +11,12 @@ import {
 class Education extends Component {
   render() {
     const educationList = this.props.data;
-    const { addEducation, handleEducationEdit, enableEducationEdit } =
-      this.props;
+    const {
+      addEducation,
+      handleEducationEdit,
+      enableEducationEdit,
+      deleteEducationElement,
+    } = this.props;
 
     return (
       <div className="education-section">
@@ -82,6 +86,7 @@ class Education extends Component {
               </div>
               <div className="form-buttons">
                 <button
+                  type="submit"
                   onClick={(e) => {
                     e.preventDefault();
                     enableEducationEdit(index, false);
@@ -89,7 +94,12 @@ class Education extends Component {
                 >
                   Submit
                 </button>
-                <button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    deleteEducationElement(index);
+                  }}
+                >
                   <FontAwesomeIcon icon={faTrash} />
                 </button>
               </div>
