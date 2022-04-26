@@ -99,7 +99,7 @@ class App extends Component {
     let newData = this.state.data;
     let newArray = newData[listing].slice();
     newArray.splice(index, 1);
-    newData.education = newArray;
+    newData[listing] = newArray;
     this.setState({
       data: newData,
     });
