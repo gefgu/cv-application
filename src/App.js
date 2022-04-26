@@ -113,7 +113,12 @@ class App extends Component {
           handleEdit={this.handleGeneralEdit}
           enableEdit={this.enableGeneralEdit}
         />
-        <Work data={this.state.data.work} />
+        <Work
+          data={this.state.data.work}
+          handleListEdit={this.handleListEdit}
+          enableListEdit={this.enableListEdit}
+          deleteListElement={this.deleteListElement}
+        />
         <Education
           data={this.state.data.education}
           addEducation={this.addEducation}
