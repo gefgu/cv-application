@@ -84,6 +84,25 @@ class Work extends Component {
                 name="description"
                 type="textarea"
               ></input>
+              <div className="form-buttons">
+                <button
+                  type="submit"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    enableListEdit("work", index, false);
+                  }}
+                >
+                  Submit
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    deleteListElement("work", index);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTrash} />
+                </button>
+              </div>
             </form>
           );
         })}
