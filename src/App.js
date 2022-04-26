@@ -63,6 +63,46 @@ class App extends Component {
     });
   };
 
+  addEducation = () => {
+    let newData = this.state.data;
+    newData.education = newData.education.concat([
+      {
+        titleOfStudy: "",
+        schoolName: "",
+        startDate: "",
+        endDate: "",
+        editing: true,
+      },
+    ]);
+    this.setState({
+      data: newData,
+    });
+  };
+
+  handleEducationEdit = (e) => {
+    let newData = this.state.data;
+    newData.education[e.target.dataset.index][e.target.name] = e.target.value;
+    this.setState({
+      data: newData,
+    });
+  };
+
+  enableEducationEdit = (index, shouldEnable) => {
+    let newData = this.state.data;
+    newData.education[index].editing = shouldEnable;
+    this.setState({
+      data: newData,
+    });
+  };
+
+  deleteEducationElement = (index) => {
+    let newData = this.state.data;
+    newData.education = newData.education.splice(index, 1);
+    this.setState({
+      data: newData,
+    });
+  };
+
   render() {
     return (
       <div className="cv-container">
@@ -72,7 +112,13 @@ class App extends Component {
           enableEdit={this.enableGeneralEdit}
         />
         <Work data={this.state.data.work} />
-        <Education data={this.state.data.education} />
+        <Education
+          data={this.state.data.education}
+          addEducation={this.addEducation}
+          handleEducationEdit={this.handleEducationEdit}
+          enableEducationEdit={this.enableEducationEdit}
+          deleteEducationElement={this.deleteEducationElement}
+        />
       </div>
     );
   }
