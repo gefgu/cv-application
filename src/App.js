@@ -79,6 +79,14 @@ class App extends Component {
     });
   };
 
+  handleEducationEdit = (e) => {
+    let newData = this.state.data;
+    newData.education[e.target.dataset.index][e.target.name] = e.target.value;
+    this.setState({
+      data: newData,
+    });
+  };
+
   render() {
     return (
       <div className="cv-container">
@@ -91,6 +99,7 @@ class App extends Component {
         <Education
           data={this.state.data.education}
           addEducation={this.addEducation}
+          handleEducationEdit={this.handleEducationEdit}
         />
       </div>
     );

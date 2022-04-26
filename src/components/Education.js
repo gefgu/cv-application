@@ -6,7 +6,7 @@ import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 class Education extends Component {
   render() {
     const educationList = this.props.data;
-    const { addEducation } = this.props;
+    const { addEducation, handleEducationEdit } = this.props;
 
     return (
       <div className="education-section">
@@ -38,16 +38,35 @@ class Education extends Component {
                 className="study-name"
                 placeholder="Title of Study"
                 value={titleOfStudy}
+                data-index={index}
+                onChange={handleEducationEdit}
+                name="titleOfStudy"
               ></input>
               <div>
                 <input
                   className="school-name"
                   placeholder="School Name"
                   value={schoolName}
+                  data-index={index}
+                  onChange={handleEducationEdit}
+                  name="schoolName"
                 ></input>
                 <span className="date">
-                  <input placeholder="Start Date" value={startDate}></input> -{" "}
-                  <input placeholder="End Date" value={endDate}></input>
+                  <input
+                    placeholder="Start Date"
+                    value={startDate}
+                    data-index={index}
+                    onChange={handleEducationEdit}
+                    name="startDate"
+                  ></input>{" "}
+                  -{" "}
+                  <input
+                    placeholder="End Date"
+                    value={endDate}
+                    data-index={index}
+                    onChange={handleEducationEdit}
+                    name="endDate"
+                  ></input>
                 </span>
               </div>
               <div className="form-buttons">
