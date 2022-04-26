@@ -79,27 +79,27 @@ class App extends Component {
     });
   };
 
-  handleEducationEdit = (e) => {
+  handleListEdit = (e, listing) => {
     let newData = this.state.data;
-    newData.education[e.target.dataset.index][e.target.name] = e.target.value;
+    newData[listing][e.target.dataset.index][e.target.name] = e.target.value;
     this.setState({
       data: newData,
     });
   };
 
-  enableEducationEdit = (index, shouldEnable) => {
+  enableListEdit = (listing, index, shouldEnable) => {
     let newData = this.state.data;
-    newData.education[index].editing = shouldEnable;
+    newData[listing][index].editing = shouldEnable;
     this.setState({
       data: newData,
     });
   };
 
-  deleteEducationElement = (index) => {
+  deleteListElement = (listing, index) => {
     let newData = this.state.data;
-    let newEducationArray = newData.education.slice();
-    newEducationArray.splice(index, 1);
-    newData.education = newEducationArray;
+    let newArray = newData[listing].slice();
+    newArray.splice(index, 1);
+    newData.education = newArray;
     this.setState({
       data: newData,
     });
@@ -117,9 +117,9 @@ class App extends Component {
         <Education
           data={this.state.data.education}
           addEducation={this.addEducation}
-          handleEducationEdit={this.handleEducationEdit}
-          enableEducationEdit={this.enableEducationEdit}
-          deleteEducationElement={this.deleteEducationElement}
+          handleListEdit={this.handleListEdit}
+          enableListEdit={this.enableListEdit}
+          deleteListElement={this.deleteListElement}
         />
       </div>
     );

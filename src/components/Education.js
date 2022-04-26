@@ -8,10 +8,12 @@ class Education extends Component {
     const educationList = this.props.data;
     const {
       addEducation,
-      handleEducationEdit,
-      enableEducationEdit,
-      deleteEducationElement,
+      handleListEdit,
+      enableListEdit,
+      deleteListElement,
     } = this.props;
+
+    const handleEducationEdit = (e) => handleListEdit(e, "education");
 
     return (
       <div className="education-section">
@@ -30,7 +32,9 @@ class Education extends Component {
               <div key={index}>
                 <h3 className="study-name">
                   {titleOfStudy}{" "}
-                  <button onClick={() => enableEducationEdit(index, true)}>
+                  <button
+                    onClick={() => enableListEdit("education", index, true)}
+                  >
                     <FontAwesomeIcon icon={faEdit} />
                   </button>
                 </h3>
@@ -84,7 +88,7 @@ class Education extends Component {
                   type="submit"
                   onClick={(e) => {
                     e.preventDefault();
-                    enableEducationEdit(index, false);
+                    enableListEdit("education", index, false);
                   }}
                 >
                   Submit
@@ -92,8 +96,7 @@ class Education extends Component {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    console.log(index);
-                    deleteEducationElement(index);
+                    deleteListElement("education", index);
                   }}
                 >
                   <FontAwesomeIcon icon={faTrash} />
