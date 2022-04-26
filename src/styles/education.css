@@ -12,9 +12,21 @@
   font-size: 1rem;
 }
 
-.date, .date input {
+.date,
+.date input {
   font-weight: lighter;
   font-style: italic;
+}
+
+.date input {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.sub-heading {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .education-section > div {

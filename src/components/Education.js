@@ -6,12 +6,8 @@ import { faPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 class Education extends Component {
   render() {
     const educationList = this.props.data;
-    const {
-      addEducation,
-      handleListEdit,
-      enableListEdit,
-      deleteListElement,
-    } = this.props;
+    const { addEducation, handleListEdit, enableListEdit, deleteListElement } =
+      this.props;
 
     const handleEducationEdit = (e) => handleListEdit(e, "education");
 
@@ -56,7 +52,7 @@ class Education extends Component {
                 onChange={handleEducationEdit}
                 name="titleOfStudy"
               ></input>
-              <div>
+              <div className="sub-heading">
                 <input
                   className="school-name"
                   placeholder="School Name"
@@ -72,8 +68,8 @@ class Education extends Component {
                     data-index={index}
                     onChange={handleEducationEdit}
                     name="startDate"
-                  ></input>{" "}
-                  -{" "}
+                  ></input>
+                  -
                   <input
                     placeholder="End Date"
                     value={endDate}
