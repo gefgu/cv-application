@@ -79,6 +79,23 @@ class App extends Component {
     });
   };
 
+  addWork = () => {
+    let newData = this.state.data;
+    newData.work = newData.work.concat([
+      {
+        companyName: "",
+        positionTitle: "",
+        description: "",
+        startDate: "",
+        endDate: "",
+        editing: true,
+      },
+    ]);
+    this.setState({
+      data: newData,
+    });
+  };
+
   handleListEdit = (e, listing) => {
     let newData = this.state.data;
     newData[listing][e.target.dataset.index][e.target.name] = e.target.value;
@@ -115,6 +132,7 @@ class App extends Component {
         />
         <Work
           data={this.state.data.work}
+          addWork={this.addWork}
           handleListEdit={this.handleListEdit}
           enableListEdit={this.enableListEdit}
           deleteListElement={this.deleteListElement}

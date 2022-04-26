@@ -6,10 +6,17 @@ import { faPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 class Work extends Component {
   render() {
     const workList = this.props.data;
+    const { handleListEdit, enableListEdit, deleteListElement, addWork } =
+      this.props;
 
     return (
       <div className="work-section">
-        <h2>Work Experience</h2>
+        <h2>
+          Work Experience{" "}
+          <button onClick={addWork}>
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
+        </h2>
         {workList.map((workInfo, index) => {
           const {
             companyName,
@@ -19,8 +26,6 @@ class Work extends Component {
             endDate,
             editing,
           } = workInfo;
-          const { handleListEdit, enableListEdit, deleteListElement } =
-            this.props;
 
           if (!editing) {
             return (
