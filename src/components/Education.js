@@ -1,109 +1,107 @@
-import React, { Component } from "react";
+import React from "react";
 import "../styles/education.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
-class Education extends Component {
-  render() {
-    const educationList = this.props.data;
-    const { addEducation, handleListEdit, enableListEdit, deleteListElement } =
-      this.props;
+function Education(props) {
+  const educationList = props.data;
+  const { addEducation, handleListEdit, enableListEdit, deleteListElement } =
+    props;
 
-    const handleEducationEdit = (e) => handleListEdit(e, "education");
+  const handleEducationEdit = (e) => handleListEdit(e, "education");
 
-    return (
-      <div className="education-section">
-        <h2>
-          Education{" "}
-          <button onClick={addEducation}>
-            <FontAwesomeIcon icon={faPlus} />
-          </button>
-        </h2>
-        {educationList.map((educationInfo, index) => {
-          const { schoolName, titleOfStudy, startDate, endDate, editing } =
-            educationInfo;
+  return (
+    <div className="education-section">
+      <h2>
+        Education{" "}
+        <button onClick={addEducation}>
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
+      </h2>
+      {educationList.map((educationInfo, index) => {
+        const { schoolName, titleOfStudy, startDate, endDate, editing } =
+          educationInfo;
 
-          if (!editing) {
-            return (
-              <div key={index}>
-                <h3 className="study-name">
-                  {titleOfStudy}{" "}
-                  <button
-                    onClick={() => enableListEdit("education", index, true)}
-                  >
-                    <FontAwesomeIcon icon={faEdit} />
-                  </button>
-                </h3>
-                <h4 className="school-name">{schoolName}</h4>
-                <span className="date">
-                  {startDate} - {endDate}
-                </span>
-              </div>
-            );
-          }
-
+        if (!editing) {
           return (
-            <form className="education-element" key={index}>
+            <div key={index}>
+              <h3 className="study-name">
+                {titleOfStudy}{" "}
+                <button
+                  onClick={() => enableListEdit("education", index, true)}
+                >
+                  <FontAwesomeIcon icon={faEdit} />
+                </button>
+              </h3>
+              <h4 className="school-name">{schoolName}</h4>
+              <span className="date">
+                {startDate} - {endDate}
+              </span>
+            </div>
+          );
+        }
+
+        return (
+          <form className="education-element" key={index}>
+            <input
+              className="study-name"
+              placeholder="Title of Study"
+              value={titleOfStudy}
+              data-index={index}
+              onChange={handleEducationEdit}
+              name="titleOfStudy"
+            ></input>
+            <div className="sub-heading">
               <input
-                className="study-name"
-                placeholder="Title of Study"
-                value={titleOfStudy}
+                className="school-name"
+                placeholder="School Name"
+                value={schoolName}
                 data-index={index}
                 onChange={handleEducationEdit}
-                name="titleOfStudy"
+                name="schoolName"
               ></input>
-              <div className="sub-heading">
+              <span className="date">
                 <input
-                  className="school-name"
-                  placeholder="School Name"
-                  value={schoolName}
+                  placeholder="Start Date"
+                  value={startDate}
                   data-index={index}
                   onChange={handleEducationEdit}
-                  name="schoolName"
+                  name="startDate"
                 ></input>
-                <span className="date">
-                  <input
-                    placeholder="Start Date"
-                    value={startDate}
-                    data-index={index}
-                    onChange={handleEducationEdit}
-                    name="startDate"
-                  ></input>
-                  -
-                  <input
-                    placeholder="End Date"
-                    value={endDate}
-                    data-index={index}
-                    onChange={handleEducationEdit}
-                    name="endDate"
-                  ></input>
-                </span>
-              </div>
-              <div className="form-buttons">
-                <button
-                  type="submit"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    enableListEdit("education", index, false);
-                  }}
-                >
-                  Submit
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    deleteListElement("education", index);
-                  }}
-                >
-                  <FontAwesomeIcon icon={faTrash} />
-                </button>
-              </div>
-            </form>
-          );
-        })}
-      </div>
-    );
-  }
+                -
+                <input
+                  placeholder="End Date"
+                  value={endDate}
+                  data-index={index}
+                  onChange={handleEducationEdit}
+                  name="endDate"
+                ></input>
+              </span>
+            </div>
+            <div className="form-buttons">
+              <button
+                type="submit"
+                onClick={(e) => {
+                  e.preventDefault();
+                  enableListEdit("education", index, false);
+                }}
+              >
+                Submit
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  deleteListElement("education", index);
+                }}
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            </div>
+          </form>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Education;
