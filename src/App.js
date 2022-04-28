@@ -12,7 +12,7 @@ class App extends Component {
       data: {
         general: {
           name: "John Doe",
-          email: "gefgu12@gmail.com",
+          email: "John@gmail.com",
           phone: "+55 (99) 99999-9999",
           editing: false,
         },
