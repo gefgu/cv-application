@@ -179,27 +179,6 @@ function HookApp() {
     },
   ]);
 
-  const [work, setWork] = useState([
-    {
-      companyName: "Facebook",
-      positionTitle: "Senior Web Developer",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      startDate: "2021",
-      endDate: "2022",
-      editing: false,
-    },
-    {
-      companyName: "Google",
-      positionTitle: "Web Developer",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      startDate: "2020",
-      endDate: "2021",
-      editing: false,
-    },
-  ]);
-
   const addEducation = () => {
     let newEducation = education.concat([
       {
@@ -232,6 +211,60 @@ function HookApp() {
     setEducation([...newEducation]);
   };
 
+  const [work, setWork] = useState([
+    {
+      companyName: "Facebook",
+      positionTitle: "Senior Web Developer",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      startDate: "2021",
+      endDate: "2022",
+      editing: false,
+    },
+    {
+      companyName: "Google",
+      positionTitle: "Web Developer",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      startDate: "2020",
+      endDate: "2021",
+      editing: false,
+    },
+  ]);
+
+  const addWork = () => {
+    let newWork = work.concat([
+      {
+        companyName: "",
+        positionTitle: "",
+        description: "",
+        startDate: "",
+        endDate: "",
+        editing: true,
+      },
+    ]);
+
+    setWork(newWork);
+  };
+
+  const handleWorkEdit = (e) => {
+    let newWork = work;
+    newWork[e.target.dataset.index][e.target.name] = e.target.value;
+    setWork([...newWork]);
+  };
+
+  const enableWorkEdit = (index, shouldEnable) => {
+    let newWork = work;
+    newWork[index].editing = shouldEnable;
+    setWork([...newWork]);
+  };
+
+  const deleteWorkElement = (index) => {
+    let newWork = work;
+    newWork.splice(index, 1);
+    setWork([...newWork]);
+  };
+
   return (
     <div className="cv-container">
       <General
@@ -239,7 +272,13 @@ function HookApp() {
         handleEdit={handleGeneralEdit}
         enableEdit={enableGeneralEdit}
       />
-      <Work data={work} />
+      <Work
+        data={work}
+        addWork={addWork}
+        handleWorkEdit={handleWorkEdit}
+        enableWorkEdit={enableWorkEdit}
+        deleteWorkElement={deleteWorkElement}
+      />
       <Education
         data={education}
         addEducation={addEducation}

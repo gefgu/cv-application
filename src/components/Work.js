@@ -5,7 +5,7 @@ import { faPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Work(props) {
   const workList = props.data;
-  const { handleListEdit, enableListEdit, deleteListElement, addWork } = props;
+  const { handleWorkEdit, enableWorkEdit, deleteWorkElement, addWork } = props;
 
   return (
     <div className="work-section">
@@ -30,7 +30,7 @@ function Work(props) {
             <div key={index}>
               <h3 className="position-title">
                 {positionTitle}{" "}
-                <button onClick={() => enableListEdit("work", index, true)}>
+                <button onClick={() => enableWorkEdit(index, true)}>
                   <FontAwesomeIcon icon={faEdit} />
                 </button>
               </h3>
@@ -50,7 +50,7 @@ function Work(props) {
               placeholder="Position Title"
               value={positionTitle}
               data-index={index}
-              onChange={(e) => handleListEdit(e, "work")}
+              onChange={(e) => handleWorkEdit(e)}
               name="positionTitle"
             ></input>
             <div>
@@ -59,7 +59,7 @@ function Work(props) {
                 placeholder="Company Name"
                 value={companyName}
                 data-index={index}
-                onChange={(e) => handleListEdit(e, "work")}
+                onChange={(e) => handleWorkEdit(e)}
                 name="companyName"
               ></input>
               <span className="date">
@@ -67,7 +67,7 @@ function Work(props) {
                   placeholder="Start Date"
                   value={startDate}
                   data-index={index}
-                  onChange={(e) => handleListEdit(e, "work")}
+                  onChange={(e) => handleWorkEdit(e)}
                   name="startDate"
                 ></input>
                 -
@@ -75,7 +75,7 @@ function Work(props) {
                   placeholder="End Date"
                   value={endDate}
                   data-index={index}
-                  onChange={(e) => handleListEdit(e, "work")}
+                  onChange={(e) => handleWorkEdit(e)}
                   name="endDate"
                 ></input>
               </span>
@@ -85,7 +85,7 @@ function Work(props) {
               placeholder="Job description..."
               value={description}
               data-index={index}
-              onChange={(e) => handleListEdit(e, "work")}
+              onChange={(e) => handleWorkEdit(e)}
               name="description"
               rows={4}
             ></textarea>
@@ -94,7 +94,7 @@ function Work(props) {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  enableListEdit("work", index, false);
+                  enableWorkEdit(index, false);
                 }}
               >
                 Submit
@@ -102,7 +102,7 @@ function Work(props) {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  deleteListElement("work", index);
+                  deleteWorkElement(index);
                 }}
               >
                 <FontAwesomeIcon icon={faTrash} />
