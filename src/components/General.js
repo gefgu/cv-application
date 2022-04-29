@@ -5,16 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function General(props) {
   const { name, email, phone, editing } = props.data;
-  const { handleEdit, setGeneral } = props;
+  const { handleEdit, enableEdit } = props;
 
-  const enableEdit = (shouldEnable) => {
-    setGeneral({
-      name: name,
-      email: email,
-      phone: phone,
-      editing: shouldEnable,
-    });
-  };
+  
 
   if (!editing) {
     return (

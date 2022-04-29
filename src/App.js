@@ -158,12 +158,16 @@ function HookApp() {
   });
 
   const handleGeneralEdit = (e) => {
-    let newGeneral = general;
+    let newGeneral = { ...general };
     newGeneral[e.target.id] = e.target.value;
-    setGeneral(newGeneral);
+    setGeneral({ ...newGeneral });
   };
 
-  
+  const enableGeneralEdit = (shouldEnable) => {
+    let newGeneral = { ...general };
+    newGeneral.editing = shouldEnable;
+    setGeneral({ ...newGeneral });
+  };
 
   const [education, setEducation] = useState([
     {
@@ -201,7 +205,7 @@ function HookApp() {
       <General
         data={general}
         handleEdit={handleGeneralEdit}
-        setGeneral={setGeneral}
+        enableEdit={enableGeneralEdit}
       />
       <Work data={work} />
       <Education data={education} />
