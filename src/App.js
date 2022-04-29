@@ -200,6 +200,20 @@ function HookApp() {
     },
   ]);
 
+  const addEducation = () => {
+    let newEducation = education.concat([
+      {
+        titleOfStudy: "",
+        schoolName: "",
+        startDate: "",
+        endDate: "",
+        editing: true,
+      },
+    ]);
+
+    setEducation(newEducation);
+  };
+
   return (
     <div className="cv-container">
       <General
@@ -208,7 +222,7 @@ function HookApp() {
         enableEdit={enableGeneralEdit}
       />
       <Work data={work} />
-      <Education data={education} />
+      <Education data={education} addEducation={addEducation} />
     </div>
   );
 }
