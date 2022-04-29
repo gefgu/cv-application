@@ -145,5 +145,4 @@ function App() {
   );
 }
 
-export { HookApp };
 export default App;
