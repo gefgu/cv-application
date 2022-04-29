@@ -157,6 +157,21 @@ function HookApp() {
     editing: false,
   });
 
+  const handleGeneralEdit = (e) => {
+    let newGeneral = general;
+    newGeneral[e.target.id] = e.target.value;
+    setGeneral(newGeneral);
+  };
+
+  const enableGeneralEdit = (shouldEnable) => {
+    setGeneral({
+      name: general.name,
+      email: general.email,
+      phone: general.phone,
+      editing: shouldEnable,
+    });
+  };
+
   const [education, setEducation] = useState([
     {
       schoolName: "Harvard Business School",
@@ -190,7 +205,12 @@ function HookApp() {
 
   return (
     <div className="cv-container">
-      <General data={general} />
+      <General
+        data={general}
+        handleEdit={handleGeneralEdit}
+        enableEdit={enableGeneralEdit}
+        setGeneral={setGeneral}
+      />
       <Work data={work} />
       <Education data={education} />
     </div>
