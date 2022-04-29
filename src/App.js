@@ -163,14 +163,7 @@ function HookApp() {
     setGeneral(newGeneral);
   };
 
-  const enableGeneralEdit = (shouldEnable) => {
-    setGeneral({
-      name: general.name,
-      email: general.email,
-      phone: general.phone,
-      editing: shouldEnable,
-    });
-  };
+  
 
   const [education, setEducation] = useState([
     {
@@ -208,7 +201,6 @@ function HookApp() {
       <General
         data={general}
         handleEdit={handleGeneralEdit}
-        enableEdit={enableGeneralEdit}
         setGeneral={setGeneral}
       />
       <Work data={work} />
