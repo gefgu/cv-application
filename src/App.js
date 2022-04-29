@@ -214,6 +214,24 @@ function HookApp() {
     setEducation(newEducation);
   };
 
+  const handleEducationEdit = (e) => {
+    let newEducation = education;
+    newEducation[e.target.dataset.index][e.target.name] = e.target.value;
+    setEducation([...newEducation]);
+  };
+
+  const enableEducationEdit = (index, shouldEnable) => {
+    let newEducation = education;
+    newEducation[index].editing = shouldEnable;
+    setEducation([...newEducation]);
+  };
+
+  const deleteEducationElement = (index) => {
+    let newEducation = education;
+    newEducation.splice(index, 1);
+    setEducation([...newEducation]);
+  };
+
   return (
     <div className="cv-container">
       <General
@@ -222,7 +240,13 @@ function HookApp() {
         enableEdit={enableGeneralEdit}
       />
       <Work data={work} />
-      <Education data={education} addEducation={addEducation} />
+      <Education
+        data={education}
+        addEducation={addEducation}
+        handleEducationEdit={handleEducationEdit}
+        enableEducationEdit={enableEducationEdit}
+        deleteEducationElement={deleteEducationElement}
+      />
     </div>
   );
 }

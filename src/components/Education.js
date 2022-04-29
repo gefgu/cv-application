@@ -5,10 +5,12 @@ import { faPlus, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Education(props) {
   const educationList = props.data;
-  const { addEducation, handleListEdit, enableListEdit, deleteListElement } =
-    props;
-
-  const handleEducationEdit = (e) => handleListEdit(e, "education");
+  const {
+    addEducation,
+    handleEducationEdit,
+    enableEducationEdit,
+    deleteEducationElement,
+  } = props;
 
   return (
     <div className="education-section">
@@ -27,9 +29,7 @@ function Education(props) {
             <div key={index}>
               <h3 className="study-name">
                 {titleOfStudy}{" "}
-                <button
-                  onClick={() => enableListEdit("education", index, true)}
-                >
+                <button onClick={() => enableEducationEdit(index, true)}>
                   <FontAwesomeIcon icon={faEdit} />
                 </button>
               </h3>
@@ -83,7 +83,7 @@ function Education(props) {
                 type="submit"
                 onClick={(e) => {
                   e.preventDefault();
-                  enableListEdit("education", index, false);
+                  enableEducationEdit(index, false);
                 }}
               >
                 Submit
@@ -91,7 +91,7 @@ function Education(props) {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  deleteListElement("education", index);
+                  deleteEducationElement(index);
                 }}
               >
                 <FontAwesomeIcon icon={faTrash} />
